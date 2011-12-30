@@ -1,0 +1,26 @@
+#
+# system.prop for startablet
+#
+ro.cwm.prefer_tar=true
+rild.libpath=/system/lib/lge-ril.so
+rild.libargs=-d /dev/ttyspi0
+rilswitch.vendorlibpath=/system/lib/lge-ril.so
+rilswitch.ganlibpath=/system/lib/libganril.so
+wifi.interface=eth0
+keyguard.no_require_sim=yes
+
+mobiledata.interfaces=gannet0,vsnet0,vsnet1,vsnet2,vsnet3
+
+# We can afford the 32m
+dalvik.vm.heapsize=32m
+
+# hold precise GC data, and use SMP
+dalvik.vm.dexopt-flags=m=y,u=n
+
+# Mount the internal SD card, too
+ro.additionalmounts=/mnt/emmc
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+
+# GSM, WCDMA preferred
+# This appears to be causing "Unknown" network type
+#ro.telephony.default_network=0

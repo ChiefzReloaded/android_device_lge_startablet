@@ -1,0 +1,339 @@
+on early-init
+    mount debugfs debugfs /sys/kernel/debug
+    write /sys/class/firmware/timeout 5
+    # for backwards compatibility
+    export EXTERNAL_STORAGE /mnt/sdcard
+    mkdir /mnt/sdcard 0000 system system
+    symlink /mnt/sdcard /sdcard
+    mkdir /usbdisk 0000 system system
+    export EXTERNAL_STORAGE_UDISK /mnt/udisk
+    mkdir /mnt/usbdisk 0000 system system
+    symlink /mnt/usbdisk /usbdisk
+on fs
+    mount ext4 /dev/block/mmcblk0p1 /system wait ro
+    setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
+    mount ext4 /dev/block/mmcblk0p4 /data wait noatime nosuid nodev
+    mount ext4 /dev/block/mmcblk0p2 /cache wait noatime nosuid nodev
+
+on post-fs-data
+    # we will remap this as /mnt/sdcard with the sdcard fuse tool
+    mkdir /data/media 0775 media_rw media_rw
+    chown media_rw media_rw /data/media
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
+
+on init
+    chmod 0777 /dev/ttyspi0
+    chown root radio /dev/ttyspi0
+    chmod 0660 /dev/ttyspi1
+    chown root radio /dev/ttyspi1
+    chmod 0660 /dev/pts1
+    chown root radio /dev/pts1
+    chmod 0660 /dev/pts2
+    chown root radio /dev/pts2
+    chmod 0660 /dev/pts3
+    chown root radio /dev/pts3
+    chmod 0660 /dev/pts4
+    chown root radio /dev/pts4
+    chmod 0660 /dev/pts5
+    chown root radio /dev/pts5
+    chmod 0660 /dev/pts6
+    chown root radio /dev/pts6
+    chmod 0660 /dev/pts7
+    chown root radio /dev/pts7
+    chmod 0660 /dev/pts8
+    chown root radio /dev/pts8
+    chmod 0660 /dev/pts9
+    chown root radio /dev/pts9
+    chmod 0660 /dev/pts10
+    chown root radio /dev/pts10
+    chmod 0660 /dev/pts11
+    chown root radio /dev/pts11
+    chmod 0660 /dev/pts12
+    chown root radio /dev/pts12
+    chmod 0660 /dev/pts13
+    chown root radio /dev/pts13
+    chmod 0660 /dev/pts14
+    chown root radio /dev/pts14
+    chmod 0660 /dev/pts15
+    chown root radio /dev/pts15
+    chmod 0660 /dev/pts16
+    chown root radio /dev/pts16
+    chmod 0660 /dev/pts17
+    chown root radio /dev/pts17
+    chmod 0666 /dev/pts18
+    chown root radio /dev/pts18
+    chmod 0660 /dev/pts19
+    chown root radio /dev/pts19
+    chmod 0660 /dev/pts20
+    chown root radio /dev/pts20
+    chmod 0660 /dev/pts21
+    chown root radio /dev/pts21
+    chmod 0660 /dev/pts22
+    chown root radio /dev/pts22
+    chmod 0660 /dev/pts23
+    chown root radio /dev/pts23
+    chmod 0660 /dev/pts24
+    chown root radio /dev/pts24
+    chmod 0660 /dev/pts25
+    chown root radio /dev/pts25
+    chmod 0660 /dev/pts26
+    chown root radio /dev/pts26
+    chmod 0660 /dev/pts27
+    chown root radio /dev/pts27
+    chmod 0660 /dev/pts28
+    chown root radio /dev/pts28
+    chmod 0660 /dev/pts29
+    chown root radio /dev/pts29
+    chmod 0660 /dev/pts30
+    chown root radio /dev/pts30
+    chmod 0660 /dev/pts31
+    chown root radio /dev/pts31
+
+# display
+    chown system system /sys/class/backlight/tegralm1bl.0/brightness
+    chmod 0644 /sys/class/backlight/tegralm1bl.0/brightness
+    chown system system /sys/devices/platform/tegra_displaytest/connection
+    chmod 0644 /sys/devices/platform/tegra_displaytest/connection
+    chown system system /sys/devices/platform/tegra_displaytest/control
+    chmod 0644 /sys/devices/platform/tegra_displaytest/control
+    chown system system /sys/devices/platform/tegra_leds/led_rgb_brightness
+    chmod 0644 /sys/devices/platform/tegra_leds/led_rgb_brightness
+    chown system system /sys/devices/platform/tegra_leds/led_blink
+    chmod 0644 /sys/devices/platform/tegra_leds/led_blink
+    chown system system /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/ledstate
+    chmod 0644 /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/ledstate
+    chown system system /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/debug
+    chmod 0644 /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/debug
+    chown system system /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/control
+    chmod 0644 /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/control
+    chown system system /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/data
+    chmod 0644 /sys/devices/platform/tegra-i2c.1/i2c-1/1-0023/data
+
+on boot
+# wifi
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+# bluetooth
+    # power up/down interface
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660                /sys/class/rfkill/rfkill0/type
+    chmod 0660                /sys/class/rfkill/rfkill0/state
+    # default power down
+    write /sys/class/rfkill/rfkill0/state 0
+    # Bluetooth BDADDR path
+    setprop ro.bt.bdaddr_path /proc/nvdata/BDADDR
+    # UART device
+    chown bluetooth bluetooth /dev/ttyHS2
+    chmod 0660                /dev/ttyHS2
+
+# Define TCP buffer sizes for various networks (TMUS only)
+#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 4096,87380,196608,4096,16384,110208
+    setprop net.tcp.buffersize.wifi    4096,87380,393216,4096,16384,110208
+    setprop net.tcp.buffersize.umts    4096,87380,393216,4096,16384,110208
+    setprop net.tcp.buffersize.edge    4096,26280,393216,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4096,8760,393216,4096,8760,11680
+    setprop net.tcp.buffersize.hspa    4096,87380,393216,4096,16384,110208
+
+# gps
+    chown system system /sys/devices/platform/tegra_gps_gpio/poweron
+    chmod 644 /sys/devices/platform/tegra_gps_gpio/poweron
+
+# backlight
+    chown system system /sys/class/backlight/tegralm1bl.0/brightness
+
+# display
+    chmod 666 /dev/nvhost-ctrl
+    chmod 666 /dev/nvhost-display
+    chmod 666 /dev/nvhost-dsi
+    chmod 666 /dev/nvhost-gr2d
+    chmod 666 /dev/nvhost-gr3d
+    chmod 666 /dev/nvhost-isp
+    chmod 666 /dev/nvhost-mpe
+    chmod 666 /dev/nvhost-vi
+
+# Sensor
+    chown system system /sys/class/input/input0/sensor_onoff
+    chmod 0644 /sys/class/input/input0/sensor_onoff
+    chown system system /sys/class/input/input0/set_sensor_delay
+    chmod 0644 /sys/class/input/input0/set_sensor_delay
+    chown system system /sys/class/input/input0/factory_test_onoff
+    chmod 0644 /sys/class/input/input0/factory_test_onoff
+    chown system system /sys/class/input/input0/factory_test_result
+    chmod 0644 /sys/class/input/input0/factory_test_result
+    chown system system /sys/class/input/input0/set_sensor_disable
+    chmod 0644 /sys/class/input/input0/set_sensor_disable
+
+# Camera
+    #CAMERA_FLASH_FINH 	0     	//GPIO_PA0
+    #CAMERA_FLASH_ENSET 	154 	//GPIO_PT2
+    #CAMERA_FLASH_EN 	220  	//GPIO_PBB4
+    chown media camera /sys/devices/virtual/gpio/gpio0/value
+    chmod 660 /sys/devices/virtual/gpio/gpio0/value
+    chown media camera /sys/devices/virtual/gpio/gpio154/value
+    chmod 660 /sys/devices/virtual/gpio/gpio154/value
+    chown media camera /sys/devices/virtual/gpio/gpio220/value
+    chmod 660 /sys/devices/virtual/gpio/gpio220/value
+    chown system system /sys/devices/platform/tegra_camera_flash/camera_flash_onoff
+    chmod 0644 /sys/devices/platform/tegra_camera_flash/camera_flash_onoff
+    mkdir /data/media/DCIM 775 media_rw media_rw
+    mkdir /data/media/DCIM/Camera 775 media_rw media_rw
+
+# MUIC
+    chown system /sys/bus/i2c/devices/0-0044/mode
+
+# Power Management Settings
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 216000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1504000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 216000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1504000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpufreq/interactive/go_maxspeed_load 80
+
+# AUDIO
+    chown system  system /sys/devices/platform/tegra_misc/spk_switch
+    chmod 660 /sys/devices/platform/tegra_misc/spk_switch
+    chown system system /sys/devices/platform/i2c-gpio.7/i2c-7/7-0060/fm31_bypass
+    chmod 660 /sys/devices/platform/i2c-gpio.7/i2c-7/7-0060/fm31_bypass
+    chown system system /sys/devices/platform/i2c-gpio.7/i2c-7/7-0060/fm31_reg
+    chmod 660 /sys/devices/platform/i2c-gpio.7/i2c-7/7-0060/fm31_reg
+
+service wpa_supplicant /system/bin/wpa_supplicant \
+    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
+    class main
+    socket wpa_eth0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd /system/bin/dhcpcd -ABKL eth0
+    class main
+    disabled
+    oneshot
+
+service hciattach /system/bin/brcm_patchram_plus_lge --enable_hci --enable_lpm --pcm_role slave  \
+    --baudrate 3000000 --patchram /system/etc/bluetooth/BCM4329B1_002.002.023.0735.0783.hcd  /dev/ttyHS2
+    class main
+    user bluetooth
+    group bluetooth net_admin system
+    disabled
+    oneshot
+
+# Initializing Bluetooth Address
+service bdaddr_init /system/bin/bdaddr_init
+    class main
+    oneshot
+
+# blueset : DUT daemon
+service bluetoothhiddend /system/bin/bluetoothhiddend
+    class main
+    disabled
+    oneshot
+
+# Wi-Fi Hidden Menu daemon
+service wifihiddend /system/bin/wifihiddend
+    class main
+    disabled
+    oneshot
+
+# Gyro Sensor daemon
+service motion /system/bin/motion
+    class late_start
+    user system
+    group system
+
+service sdcard /system/bin/sdcard /data/media 1023 1023
+    class late_start
+
+# lgesystemd daemon
+service lgesystemd /system/bin/lgesystemd
+    class late_start
+service eventd /system/bin/eventd
+    class late_start
+# eta deamon (tmus only)
+service eta /system/bin/eta
+    class late_start
+
+# bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys
+#service bugreport /system/bin/dumpstate -d -v -o /mnt/sdcard/bugreports/bugreport
+#    class late_start
+#    disabled
+#    oneshot
+#    keycodes 115 114
+
+# Logging service
+service log-kernel /system/bin/sh /etc/save_kernel_log.sh
+    class late_start
+    disabled
+    oneshot
+
+on property:persist.service.kernel.enable=1
+    start log-kernel
+
+on property:persist.service.kernel.enable=0
+    stop log-kernel
+
+service clear-kernel-log /system/bin/clear-kernel-log
+    class late_start
+    disabled
+    oneshot
+
+service logcat-main /system/bin/logcat -v time -b main -f /mnt/sdcard/logger/main.log -n 4 -r 4096
+    class late_start
+    disabled
+    oneshot
+
+on property:persist.service.main.enable=1
+    start logcat-main
+
+on property:persist.service.main.enable=0
+    stop logcat-main
+
+service logcat-system /system/bin/logcat -v time -b system -f /mnt/sdcard/logger/system.log -n 4 -r 4096
+    class late_start
+    disabled
+    oneshot
+
+on property:persist.service.system.enable=1
+    start logcat-system
+
+on property:persist.service.system.enable=0
+    stop logcat-system
+
+service logcat-radio /system/bin/logcat -v time -b radio -f /mnt/sdcard/logger/radio.log -n 4 -r 4096
+    class late_start
+    disabled
+    oneshot
+
+on property:persist.service.radio.enable=1
+    start logcat-radio
+
+on property:persist.service.radio.enable=0
+    stop logcat-radio
+
+service logcat-events /system/bin/logcat -v time -b events -f /mnt/sdcard/logger/events.log -n 4 -r 4096
+    class late_start
+    disabled
+    oneshot
+
+on property:persist.service.events.enable=1
+    start logcat-events
+
+on property:persist.service.events.enable=0
+    stop logcat-events
+# End of Logging service
+
+# Start RescueStarter for Rescue+Mobile (tmus only)
+service RescueStarter /system/bin/RescueStarter
+    class late_start
+    user root
+    group input graphics
