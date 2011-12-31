@@ -26,6 +26,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/gps.xml:system/etc/gps.xml \

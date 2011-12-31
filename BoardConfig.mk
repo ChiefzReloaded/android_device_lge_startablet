@@ -40,6 +40,8 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_CMDLINE :=
 BOARD_PAGE_SIZE := 2048
 
+BOARD_EGL_CFG := device/lge/startablet/egl.cfg
+
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 5242880
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 5242880
