@@ -1,10 +1,12 @@
 bin/am
 bin/bdaddr_init
 bin/bmgr
+bin/brcm_patchram_plus
+bin/brcm_patchram_plus_lge
 bin/bluetoothd
 bin/bluetoothhiddend
 bin/drmserver
-bin/eta
+bin/etalog
 bin/eventd
 bin/lg_calibration
 bin/lg_check_cal_pass
