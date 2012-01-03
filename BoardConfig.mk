@@ -15,6 +15,9 @@
 #
 
 # inherit from the proprietary version
+BOARD_USES_GENERIC_AUDIO := false
+USE_CAMERA_STUB := false
+
 -include vendor/lge/startablet/BoardConfigVendor.mk
 
 TARGET_BOARD_PLATFORM := tegra
@@ -42,6 +45,10 @@ BOARD_PAGE_SIZE := 2048
 
 BOARD_EGL_CFG := device/lge/startablet/egl.cfg
 
+USE_OPENGL_RENDERER := true
+
+BOARD_USES_AUDIO_LEGACY := true
+
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 5242880
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 5242880
@@ -58,8 +65,8 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # Indicate that the board has an Internal SD Card
 BOARD_HAS_SDCARD_INTERNAL := true
 
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+#BOARD_HAVE_BLUETOOTH := true
+#BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk0p4
 BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p4
