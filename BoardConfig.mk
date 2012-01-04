@@ -15,8 +15,9 @@
 #
 
 # inherit from the proprietary version
-BOARD_USES_GENERIC_AUDIO := false
-USE_CAMERA_STUB := false
+# Camera Setup
+USE_CAMERA_STUB := true
+BOARD_FIRST_CAMERA_FRONT_FACING := true
 
 -include vendor/lge/startablet/BoardConfigVendor.mk
 
@@ -36,13 +37,13 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-BOARD_USE_LEGACY_TOUCHSCREEN := true
+#BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := startablet
 
 BOARD_KERNEL_BASE := 0x10000000
-BOARD_KERNEL_CMDLINE :=
+BOARD_KERNEL_CMDLINE := nvmem=128M@384M mem=1024M@0M vmalloc=256M video=tegrafb console=none usbcore.old_scheme_first=1 lp0_vec=8192@0x1f855000 tegra_fbmem=3937280@0x1f86b000 tegraboot=sdmmc muic_path=0:15 usb_serial=028841C541E0C297 usb_mode=0 hw_rev=Rev_1_3 gpt
 BOARD_PAGE_SIZE := 2048
 
 BOARD_EGL_CFG := device/lge/startablet/egl.cfg
@@ -51,7 +52,8 @@ USE_OPENGL_RENDERER := true
 
 BOARD_USES_AUDIO_LEGACY := true
 
-# fix this up by examining /proc/mtd on a running device
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+
 BOARD_BOOTIMAGE_PARTITION_SIZE := 5242880
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 5242880
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 419430400
