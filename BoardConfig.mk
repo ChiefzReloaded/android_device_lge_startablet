@@ -50,7 +50,7 @@ BOARD_PAGE_SIZE := 2048
 
 BOARD_EGL_CFG := device/lge/startablet/egl.cfg
 
-USE_OPENGL_RENDERER := false
+USE_OPENGL_RENDERER := true
 
 TARGET_HAVE_HDMI_OUT := true
 
@@ -85,8 +85,8 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # Indicate that the board has an Internal SD Card
 BOARD_HAS_SDCARD_INTERNAL := true
 
-#BOARD_HAVE_BLUETOOTH := true
-#BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk0p4
 BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p4
