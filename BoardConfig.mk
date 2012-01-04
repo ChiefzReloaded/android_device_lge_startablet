@@ -15,8 +15,12 @@
 #
 
 # inherit from the proprietary version
+
+# Allow compatibility with old touchscreens
+BOARD_USE_LEGACY_TOUCHSCREEN := true
+
 # Camera Setup
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 BOARD_FIRST_CAMERA_FRONT_FACING := true
 
 -include vendor/lge/startablet/BoardConfigVendor.mk
@@ -37,8 +41,6 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-#BOARD_USE_LEGACY_TOUCHSCREEN := true
-
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := startablet
 
@@ -48,7 +50,9 @@ BOARD_PAGE_SIZE := 2048
 
 BOARD_EGL_CFG := device/lge/startablet/egl.cfg
 
-USE_OPENGL_RENDERER := true
+USE_OPENGL_RENDERER := false
+
+TARGET_HAVE_HDMI_OUT := true
 
 BOARD_USES_AUDIO_LEGACY := true
 
@@ -62,6 +66,18 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 TARGET_PREBUILT_KERNEL := device/lge/startablet/kernel
+
+# Wifi related defines
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+BOARD_HOSTAP_DRIVER := WEXT
+BOARD_WLAN_DEVICE := bcm4329
+
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_NAME     :=  "bcm4329"
+WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/vendor/firmware/fw_bcm4329.bin nvram_path=/system/etc/wifi/nvram.txt"
 
 # Setting this to avoid boot locks on the system from using the "misc" partition.
 BOARD_HAS_NO_MISC_PARTITION := true
