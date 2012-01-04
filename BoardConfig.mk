@@ -16,6 +16,8 @@
 
 # inherit from the proprietary version
 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 # Allow compatibility with old touchscreens
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
