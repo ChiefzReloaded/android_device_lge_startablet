@@ -27,6 +27,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/gps.xml:system/etc/gps.xml \
