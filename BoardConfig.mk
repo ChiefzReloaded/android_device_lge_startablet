@@ -72,7 +72,9 @@ TARGET_PREBUILT_KERNEL := device/lge/startablet/kernel
 # Wifi related defines
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
 BOARD_HOSTAP_DRIVER := WEXT
+BOARD_HOSTAP_PRIVATE_LIB := lib_driver_cmd_wext
 BOARD_WLAN_DEVICE := bcm4329
 
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
