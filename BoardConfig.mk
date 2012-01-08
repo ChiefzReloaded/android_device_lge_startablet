@@ -19,7 +19,7 @@
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Allow compatibility with old touchscreens
-BOARD_USE_LEGACY_TOUCHSCREEN := true
+#BOARD_USE_LEGACY_TOUCHSCREEN := false
 
 # Camera Setup
 USE_CAMERA_STUB := false
@@ -89,8 +89,8 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # Indicate that the board has an Internal SD Card
 BOARD_HAS_SDCARD_INTERNAL := true
 
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+#BOARD_HAVE_BLUETOOTH := true
+#BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk0p4
 BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p4
