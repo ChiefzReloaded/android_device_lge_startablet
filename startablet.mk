@@ -18,7 +18,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/bcm4329.ko:system/lib/hw/bcm4329.ko
+    $(LOCAL_PATH)/prebuilt/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.startablet.rc:root/init.startablet.rc \
