@@ -1,8 +1,5 @@
-# Inherit device configuration for p4wifi.
+# Inherit device configuration for startablet.
 $(call inherit-product, device/lge/startablet/startablet.mk)
-
-# Inherit some common cyanogenmod stuff.
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 #
 # Setup device specific product configuration.
