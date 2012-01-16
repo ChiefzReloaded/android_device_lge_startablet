@@ -39,6 +39,11 @@ etc/firmware/nvmm_sorensondec.axf
 etc/firmware/nvmm_wavdec.axf
 etc/firmware/nvrm_avp.bin
 etc/bluetooth/BCM4329B1_002.002.023.0875.0883.hcd
+etc/permissions/com.android.location.provider.xml
+etc/permissions/com.google.android.maps.xml
+etc/permissions/com.google.widevine.software.drm.xml
+etc/permissions/com.nvidia.display.xml
+etc/permissions/com.tmus.gslate.apps.xml
 etc/wifi/rtecdc.bin
 etc/wifi/rtecdc_apsta.bin
 etc/wifi/rtecdc-mfgtest.bin
