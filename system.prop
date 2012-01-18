@@ -2,10 +2,20 @@
 # system.prop for startablet
 #
 ro.cwm.prefer_tar=true
+dalvik.vm.heapstartsize=5m
+dalvik.vm.growthlimit=48m
+dalvik.vm.heapgrowthlimit=48m
+dalvik.vm.heapsize=256m
+dalvik.vm.lockprof.threshold=500
+dalvik.vm.dexopt-flags=m=y
 ro.opengles.version=131072
+wifi.interface=eth0
+ro.ril.wake_lock_timeout=180000
 rild.libpath=/system/lib/lge-ril.so
 rild.libargs=-d /dev/ttyspi0
-wifi.interface=eth0
+sys.settings_system_version=2
+wifi.supplicant_scan_interval=15
+drm.service.enabled=1
 keyguard.no_require_sim=yes
 
 mobiledata.interfaces=gannet0,vsnet0,vsnet1,vsnet2,vsnet3

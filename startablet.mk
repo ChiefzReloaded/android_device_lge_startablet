@@ -99,6 +99,6 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_startablet
-PRODUCT_DEVICE := startablet
-PRODUCT_MODEL := LG G-Slate
+PRODUCT_NAME := lge_startablet
+PRODUCT_DEVICE := v909
+PRODUCT_MODEL := LG-V909

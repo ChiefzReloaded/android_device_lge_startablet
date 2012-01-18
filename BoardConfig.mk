@@ -72,6 +72,8 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 TARGET_PREBUILT_KERNEL := device/lge/startablet/kernel
 
+BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun0/file
+
 # Wifi related defines
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
