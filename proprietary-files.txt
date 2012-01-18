@@ -16,7 +16,11 @@ bin/lgesystemd
 bin/lg_golden_test
 bin/lg_init_calibration
 bin/motion
+bin/nv_hciattach
 bin/nvrm_daemon
+bin/nvtest
+bin/omx_tests
+bin/RescueServer
 bin/RescueStarter
 bin/tegrastats
 bin/wifihiddend
@@ -113,3 +117,5 @@ lib/libstagefrighthw.so
 lib/libwpa_client.so
 vendor/firmware/fw_bcm4329.bin
 vendor/firmware/fw_bcm4329_apsta.bin
+framework/com.tmus.gslate.apps.jar
+framework/com.google.android.maps.jar
