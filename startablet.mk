@@ -21,21 +21,28 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bcm4329.ko:system/lib/hw/bcm4329.ko
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
+    $(LOCAL_PATH)/prebuilt/rild:system/bin/rild \
+    $(LOCAL_PATH)/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.startablet.rc:root/init.startablet.rc \
     $(LOCAL_PATH)/ueventd.startablet.rc:root/ueventd.startablet.rc \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
-    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc
 
 PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml \
      $(LOCAL_PATH)/gps.xml:system/etc/gps.xml \
      $(LOCAL_PATH)/gps.conf:system/etc/gps.conf
 
 PRODUCT_PROPERTY_OVERRIDES := \
-    wifi.interface=wlan0 \
+    wifi.interface=eth0 \
     wifi.supplicant_scan_interval=15
 
 # These are the hardware-specific features
@@ -71,6 +78,19 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 $(call inherit-product, build/target/product/full.mk)
+
+## LGE stuffs
+PRODUCT_PACKAGES += \
+    LGEServices \
+    bridgeutil \
+    libbridges \
+    libbridge \
+    libbridge_jni \
+    secureclockd \
+    libsecureclock \
+    screencap \
+    hwprops \
+    com.android.future.usb.accessory
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_startablet

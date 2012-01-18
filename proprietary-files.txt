@@ -110,5 +110,6 @@ lib/libnvwsi.so
 lib/libreference-ril.so
 lib/libril.so
 lib/libstagefrighthw.so
+lib/libwpa_client.so
 vendor/firmware/fw_bcm4329.bin
 vendor/firmware/fw_bcm4329_apsta.bin
