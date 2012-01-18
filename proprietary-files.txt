@@ -24,6 +24,7 @@ bin/RescueServer
 bin/RescueStarter
 bin/tegrastats
 bin/wifihiddend
+bin/wl
 etc/asound.conf
 etc/firmware/nvddk_audiofx_core.axf
 etc/firmware/nvddk_audiofx_transport.axf

@@ -80,7 +80,7 @@ BOARD_HOSTAP_DRIVER := WEXT
 BOARD_HOSTAP_PRIVATE_LIB := lib_driver_cmd_wext
 BOARD_WLAN_DEVICE := bcm4329
 
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/hw/bcm4329.ko"
 WIFI_DRIVER_FW_STA_PATH     := "/system/etc/wifi/rtecdc.bin"
 WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wl/rtecdc-apsta.bin"
 WIFI_DRIVER_MODULE_NAME     :=  "bcm4329"

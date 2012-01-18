@@ -21,6 +21,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bcm4329.ko:system/lib/hw/bcm4329.ko
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/tun.ko:system/lib/modules/tun.ko
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
     $(LOCAL_PATH)/prebuilt/rild:system/bin/rild \
