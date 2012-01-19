@@ -42,6 +42,9 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # Custom Recovery UI Settings
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lge/startablet/recovery/recovery_ui.c
 
+# Override recovery init.rc
+TARGET_RECOVERY_INITRC := device/lge/startablet/recovery/init.rc
+
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
