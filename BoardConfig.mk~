@@ -40,7 +40,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 #TARGET_SPECIFIC_HEADER_PATH := device/lge/startablet/include
 
 # Custom Recovery UI Settings
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lge/startablet/recovery/recovery_ui.c
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lge/startablet/recovery/recovery_ui.c
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
