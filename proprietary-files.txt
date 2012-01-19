@@ -53,7 +53,6 @@ etc/wifi/rtecdc.bin
 etc/wifi/rtecdc_apsta.bin
 etc/wifi/rtecdc-mfgtest.bin
 etc/wifi/nvram.txt
-etc/wifi/wpa_supplicant.conf
 lib/egl/libEGL_tegra.so
 lib/egl/libGLESv1_CM_tegra.so
 lib/egl/libGLESv2_tegra.so
