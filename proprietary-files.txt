@@ -53,7 +53,6 @@ etc/permissions/com.nvidia.display.xml
 etc/permissions/com.tmus.gslate.apps.xml
 etc/wifi/config
 etc/wifi/nvram.txt
-etc/wifi/wpa_supplicant.conf
 lib/egl/libEGL_tegra.so
 lib/egl/libGLESv1_CM_tegra.so
 lib/egl/libGLESv2_tegra.so
@@ -116,6 +115,5 @@ lib/libnvwsi.so
 lib/libreference-ril.so
 lib/libril.so
 lib/libstagefrighthw.so
-lib/libwpa_client.so
 framework/com.tmus.gslate.apps.jar
 framework/com.google.android.maps.jar
