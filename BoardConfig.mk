@@ -79,18 +79,19 @@ BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun0/file
 
 # Wifi related defines
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
-BOARD_HOSTAP_DRIVER := WEXT
-BOARD_HOSTAP_PRIVATE_LIB := lib_driver_cmd_wext
-BOARD_WLAN_DEVICE := bcm4329
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE := bcmdhd
 
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/hw/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/system/etc/wifi/rtecdc.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wifi/rtecdc-apsta.bin"
-WIFI_DRIVER_MODULE_NAME     :=  "bcm4329"
-WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/etc/wifi/rtecdc.bin nvram_path=/system/etc/wifi/nvram.txt"
-WIFI_DRIVER_HAS_LGE_SOFTAP	:= true
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcmdhd.ko"
+WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP  := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_MODULE_NAME := "bcmdhd"
+WIFI_DRIVER_MODULE_ARG  := "firmware_path=/system/vendor/firmware/fw_bcmdhd.bin nvram_path=/system/etc/wifi/nvram.txt"
+WIFI_BAND := 802_11_BG
+#WIFI_DRIVER_HAS_LGE_SOFTAP	:= true
 
 # Setting this to avoid boot locks on the system from using the "misc" partition.
 BOARD_HAS_NO_MISC_PARTITION := true
