@@ -20,12 +20,14 @@ bin/nv_hciattach
 bin/nvrm_daemon
 bin/nvtest
 bin/omx_tests
+bin/pppd
 bin/RescueServer
 bin/RescueStarter
 bin/tegrastats
 bin/wifihiddend
 bin/wl
 etc/asound.conf
+etc/init.goldfish.sh
 etc/firmware/nvddk_audiofx_core.axf
 etc/firmware/nvddk_audiofx_transport.axf
 etc/firmware/nvmm_aacdec.axf
@@ -49,9 +51,7 @@ etc/permissions/com.google.android.maps.xml
 etc/permissions/com.google.widevine.software.drm.xml
 etc/permissions/com.nvidia.display.xml
 etc/permissions/com.tmus.gslate.apps.xml
-etc/wifi/rtecdc.bin
-etc/wifi/rtecdc_apsta.bin
-etc/wifi/rtecdc-mfgtest.bin
+etc/wifi/config
 etc/wifi/nvram.txt
 lib/egl/libEGL_tegra.so
 lib/egl/libGLESv1_CM_tegra.so
@@ -73,6 +73,7 @@ lib/libcgdrv.so
 lib/drm/libdrmwvmplugin.so
 lib/libdrm1.so
 lib/libdrm1_jni.so
+lib/liblgerft.so
 lib/libnvapputil.so
 lib/libnvddk_2d.so
 lib/libnvddk_2d_v2.so
@@ -114,8 +115,5 @@ lib/libnvwsi.so
 lib/libreference-ril.so
 lib/libril.so
 lib/libstagefrighthw.so
-lib/libwpa_client.so
-vendor/firmware/fw_bcm4329.bin
-vendor/firmware/fw_bcm4329_apsta.bin
 framework/com.tmus.gslate.apps.jar
 framework/com.google.android.maps.jar
