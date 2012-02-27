@@ -277,11 +277,11 @@ service eta /system/bin/eta
     class late_start
 
 # bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys
-#service bugreport /system/bin/dumpstate -d -v -o /mnt/sdcard/bugreports/bugreport
-#    class late_start
-#    disabled
-#    oneshot
-#    keycodes 115 114
+service bugreport /system/bin/dumpstate -d -v -o /mnt/sdcard/bugreports/bugreport
+    class late_start
+    disabled
+    oneshot
+    keycodes 115 114
 
 # Logging service
 service log-kernel /system/bin/sh /etc/save_kernel_log.sh
