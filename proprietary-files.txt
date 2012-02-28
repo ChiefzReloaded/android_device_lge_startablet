@@ -47,7 +47,6 @@ lib/libcgdrv.so
 lib/drm/libdrmwvmplugin.so
 lib/libdrm1.so
 lib/libdrm1_jni.so
-lib/liblgerft.so
 lib/libreference-ril.so
 lib/libril.so
 framework/com.tmus.gslate.apps.jar
