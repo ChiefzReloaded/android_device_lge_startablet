@@ -35,7 +35,6 @@ etc/permissions/com.tmus.gslate.apps.xml
 etc/wifi/config
 etc/wifi/nvram.txt
 lib/hw/gps.startablet.so
-lib/hw/lights.startablet.so
 lib/hw/sensors.startablet.so
 lib/hw/sensors.tegra.so
 lib/hw/tegra_alsa.startablet.so
