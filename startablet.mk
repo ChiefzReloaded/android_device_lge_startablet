@@ -93,6 +93,7 @@ PRODUCT_PACKAGES += \
     libbridges \
     libbridge \
     libbridge_jni \
+    libinvensense_mpl \
     secureclockd \
     libsecureclock \
     screencap \
