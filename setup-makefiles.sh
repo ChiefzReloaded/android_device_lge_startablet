@@ -41,7 +41,7 @@ for FILE in `cat proprietary-files.txt`; do
     echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
 done
 
-(cat << EOF) > $MAKEFILE
+(cat << EOF) >> $MAKEFILE
 PRODUCT_COPY_FILES += \\
 EOF
 
