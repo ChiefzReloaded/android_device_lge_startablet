@@ -39,7 +39,7 @@ static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 static struct light_state_t g_notification;
 
 char const*const LCD_FILE
-        = "/sys/class/backlight/tegra-pwm-bl.0/brightness";
+        = "/sys/class/backlight/tegra-pwm-bl/brightness";
 
 char const*const BUTTON_BRIGHTNESS
         = "/sys/class/leds/buttonpanel/brightness";
