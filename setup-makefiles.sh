@@ -41,6 +41,20 @@ for FILE in `cat proprietary-files.txt`; do
     echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
 done
 
+(cat << EOF) > $MAKEFILE
+PRODUCT_COPY_FILES += \\
+EOF
+
+LINEEND=" \\"
+COUNT=`wc -l proprietary-files-ventana.txt | awk {'print $1'}`
+for FILE in `cat proprietary-files-ventana.txt`; do
+    COUNT=`expr $COUNT - 1`
+    if [ $COUNT = "0" ]; then
+        LINEEND=""
+    fi
+    echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+done
+
 (cat << EOF) > ../../../$OUTDIR/$DEVICE-vendor.mk
 # Copyright (C) 2011 The CyanogenMod Project
 #
