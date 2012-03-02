@@ -15,7 +15,6 @@ bin/lgemodem
 bin/lgesystemd
 bin/lg_golden_test
 bin/lg_init_calibration
-bin/motion
 bin/nv_hciattach
 bin/nvtest
 bin/omx_tests
