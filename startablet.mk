@@ -53,7 +53,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15
 
-# These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -94,6 +93,7 @@ PRODUCT_PACKAGES += \
     libbridges \
     libbridge \
     libbridge_jni \
+    libinvensense_mpl \
     secureclockd \
     libsecureclock \
     screencap \
