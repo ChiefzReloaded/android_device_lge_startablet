@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-ifneq ($(filter p990 p999 v909, $(TARGET_BOOTLOADER_BOARD_NAME)),)
+ifneq ($(filter startablet p990 p999 v909, $(TARGET_BOOTLOADER_BOARD_NAME)),)
 
 LOCAL_PATH:= $(call my-dir)
 # HAL module implemenation, not prelinked and stored in

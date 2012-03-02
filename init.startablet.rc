@@ -147,7 +147,7 @@ on boot
     chmod 644 /sys/devices/platform/tegra_gps_gpio/poweron
 
 # backlight
-    chown system system /sys/class/backlight/tegralm1bl.0/brightness
+    chown system system /sys/class/backlight/tegra-pwm-bl/brightness
 
 # display
     chmod 666 /dev/nvhost-ctrl
@@ -158,6 +158,11 @@ on boot
     chmod 666 /dev/nvhost-isp
     chmod 666 /dev/nvhost-mpe
     chmod 666 /dev/nvhost-vi
+    chmod 666 /dev/tegra_dc_0
+    chmod 666 /dev/tegra_dc_1
+    chmod 0666 /dev/tegra_dc_0
+    chmod 0666 /dev/tegra_dc_1
+    chmod 0666 /dev/tegra_dc_ctr
 
 # Sensor
     chown system system /sys/class/input/input0/sensor_onoff
@@ -253,12 +258,6 @@ service wifihiddend /system/bin/wifihiddend
     disabled
     oneshot
 
-# Gyro Sensor daemon
-service motion /system/bin/motion
-    class late_start
-    user system
-    group system
-
 service sdcard /system/bin/sdcard /data/media 1023 1023
     class late_start
 
@@ -272,11 +271,11 @@ service eta /system/bin/eta
     class late_start
 
 # bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys
-#service bugreport /system/bin/dumpstate -d -v -o /mnt/sdcard/bugreports/bugreport
-#    class late_start
-#    disabled
-#    oneshot
-#    keycodes 115 114
+service bugreport /system/bin/dumpstate -d -v -o /mnt/sdcard/bugreports/bugreport
+    class late_start
+    disabled
+    oneshot
+    keycodes 115 114
 
 # Logging service
 service log-kernel /system/bin/sh /etc/save_kernel_log.sh
