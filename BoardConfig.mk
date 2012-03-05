@@ -96,11 +96,6 @@ WIFI_BAND := 802_11_BG
 # Setting this to avoid boot locks on the system from using the "misc" partition.
 BOARD_HAS_NO_MISC_PARTITION := true
 
-# Indicate that the board has an Internal SD Card
-BOARD_HAS_SDCARD_INTERNAL := true
-
-BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-
 BOARD_USES_HW_MEDIARECORDER := true
 BOARD_USES_HW_MEDIAPLUGINS := true
 
@@ -122,6 +117,3 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 TARGET_OVERLAY_ALWAYS_DETERMINES_FORMAT := true
 
 TARGET_DONT_SET_AUDIO_AAC_FORMAT := true
-
-BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk0p4
-BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p4

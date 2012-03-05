@@ -40,7 +40,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ueventd.startablet.rc:root/ueventd.startablet.rc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc
 
