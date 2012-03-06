@@ -212,7 +212,7 @@ on boot
     chmod 660 /sys/devices/platform/i2c-gpio.7/i2c-7/7-0060/fm31_reg
 
 service wpa_supplicant /system/bin/wpa_supplicant \
-    -Dnl80211 -iwlan0 -puse_p2p_group_interface=1 \
+    -Dwext -iwlan0 \
     -c/data/misc/wifi/wpa_supplicant.conf
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT

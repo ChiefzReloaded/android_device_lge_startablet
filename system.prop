@@ -20,10 +20,6 @@ dalvik.vm.heapsize=32m
 # hold precise GC data, and use SMP
 dalvik.vm.dexopt-flags=m=y,u=n
 
-# Mount the internal SD card, too
-ro.additionalmounts=/mnt/emmc
-ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
-
 # GSM, WCDMA preferred
 # This appears to be causing "Unknown" network type
 #ro.telephony.default_network=0
