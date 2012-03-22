@@ -52,7 +52,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := startablet
 
 BOARD_KERNEL_BASE := 0x10000000
-BOARD_KERNEL_CMDLINE := nvmem=128M@384M mem=1024M@0M vmalloc=256M video=tegrafb console=none usbcore.old_scheme_first=1 lp0_vec=8192@0x1f855000 tegra_fbmem=3937280@0x1f86b000 tegraboot=sdmmc muic_path=0:15 usb_serial=028841C541E0C297 usb_mode=0 hw_rev=Rev_1_3 gpt
+BOARD_KERNEL_CMDLINE := nvmem=128M@384M mem=1024M@0M vmalloc=256M video=tegrafb console=none lp0_vec=8192@0x1f855000 tegra_fbmem=3937280@0x1f86b000 tegraboot=sdmmc muic_path=0:15 usb_mode=0 hw_rev=Rev_1_3 gpt
 BOARD_PAGE_SIZE := 0x00000800
 
 BOARD_EGL_CFG := device/lge/startablet/egl.cfg
