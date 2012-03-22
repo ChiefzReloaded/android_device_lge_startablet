@@ -37,6 +37,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.startablet.rc:root/init.startablet.rc \
+    $(LOCAL_PATH)/init.startablet.usb.rc:root/init.startablet.usb.rc \
     $(LOCAL_PATH)/ueventd.startablet.rc:root/ueventd.startablet.rc \
 
 PRODUCT_COPY_FILES += \
