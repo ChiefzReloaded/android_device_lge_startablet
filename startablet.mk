@@ -93,6 +93,7 @@ PRODUCT_PACKAGES += \
     libbridges \
     libbridge \
     libbridge_jni \
+    sensors.startablet \
     libinvensense_mpl \
     secureclockd \
     libsecureclock \
