@@ -101,6 +101,8 @@ PRODUCT_PACKAGES += \
     hwprops \
     com.android.future.usb.accessory
 
+PRODUCT_CHARACTERISTICS := tablet,nosdcard
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := lge_startablet
 PRODUCT_DEVICE := v909
