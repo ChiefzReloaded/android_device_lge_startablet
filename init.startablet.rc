@@ -260,6 +260,12 @@ service wifihiddend /system/bin/wifihiddend
     disabled
     oneshot
 
+# Gyro Sensor daemon
+service motion /system/bin/motion
+    class late_start
+    user system
+    group system
+
 service sdcard /system/bin/sdcard /data/media 1023 1023
     class late_start
 

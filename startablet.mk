@@ -94,8 +94,6 @@ PRODUCT_PACKAGES += \
     libbridge \
     libbridge_jni \
     lights.startablet \
-    sensors.startablet \
-    libinvensense_mpl \
     secureclockd \
     libsecureclock \
     screencap \
