@@ -93,12 +93,16 @@ PRODUCT_PACKAGES += \
     libbridges \
     libbridge \
     libbridge_jni \
+    lights.startablet \
+    sensors.startablet \
     libinvensense_mpl \
     secureclockd \
     libsecureclock \
     screencap \
     hwprops \
     com.android.future.usb.accessory
+
+PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := lge_startablet
