@@ -45,7 +45,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc
 
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml \
      $(LOCAL_PATH)/gps.xml:system/etc/gps.xml \
      $(LOCAL_PATH)/gps.conf:system/etc/gps.conf
 
@@ -84,7 +83,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 ## LGE stuffs
 PRODUCT_PACKAGES += \
@@ -94,8 +93,6 @@ PRODUCT_PACKAGES += \
     libbridge \
     libbridge_jni \
     lights.startablet \
-    sensors.startablet \
-    libinvensense_mpl \
     secureclockd \
     libsecureclock \
     screencap \
