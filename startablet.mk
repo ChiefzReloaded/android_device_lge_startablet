@@ -45,7 +45,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc
 
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml \
      $(LOCAL_PATH)/gps.xml:system/etc/gps.xml \
      $(LOCAL_PATH)/gps.conf:system/etc/gps.conf
 
