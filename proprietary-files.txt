@@ -15,6 +15,7 @@ bin/lgemodem
 bin/lgesystemd
 bin/lg_golden_test
 bin/lg_init_calibration
+bin/motion
 bin/nv_hciattach
 bin/nvtest
 bin/omx_tests
@@ -34,6 +35,7 @@ etc/permissions/com.tmus.gslate.apps.xml
 etc/wifi/config
 etc/wifi/nvram.txt
 lib/hw/gps.startablet.so
+lib/hw/sensors.startablet.so
 lib/hw/tegra_alsa.startablet.so
 lib/lge-ril.so
 lib/libaudio.so
